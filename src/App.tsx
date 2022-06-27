@@ -1,23 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import logo from "./logo.svg";
+
+import { IconButton } from "./components/atoms/IconButton";
+import { InputText } from "./components/atoms/inputText";
 
 function App() {
+  const [value, setValue] = useState<string | undefined>();
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header style={{ width: 400, margin: "0 auto" }}>
+        <div>
+          <IconButton circle onClick={() => console.log("matheus", value)} />
+        </div>
+
+        <div>
+          <InputText value={value} label="Nome" onChange={handleChange} />
+        </div>
       </header>
     </div>
   );
