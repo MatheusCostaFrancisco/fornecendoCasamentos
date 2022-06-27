@@ -15,7 +15,7 @@ function App() {
       <header style={{ width: 400, margin: "0 auto", marginTop: 50 }}>
         <div>
           <IconButton
-            icon="anchor"
+            icon="adjust"
             circle
             backgroundColor="primaryDark"
             onClick={() => console.log("matheus", value)}
