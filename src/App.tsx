@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 
 import { IconButton } from "./components/atoms/IconButton";
 import { InputText } from "./components/atoms/inputText";
-
+import "../src/css/style.css";
 function App() {
   const [value, setValue] = useState<string | undefined>();
 
@@ -13,9 +12,14 @@ function App() {
 
   return (
     <div className="App">
-      <header style={{ width: 400, margin: "0 auto" }}>
+      <header style={{ width: 400, margin: "0 auto", marginTop: 50 }}>
         <div>
-          <IconButton circle onClick={() => console.log("matheus", value)} />
+          <IconButton
+            icon="anchor"
+            circle
+            backgroundColor="primaryDark"
+            onClick={() => console.log("matheus", value)}
+          />
         </div>
 
         <div>
