@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconName, library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
-import { faCheckSquare, faAdd } from "@fortawesome/free-solid-svg-icons";
-import "./style.css";
 
-library.add(fab, faCheckSquare, faAdd);
+import "./style.css";
+import { Icon } from "../Icon/Icon";
+import { IconName } from "@fortawesome/fontawesome-svg-core";
+import { ThemeKeys } from "../../../helpers/ThemeKeys";
 
 export type IconButtonProps = {
   testID?: string;
@@ -13,15 +11,16 @@ export type IconButtonProps = {
   icon?: IconName;
   text?: string;
   circle?: boolean;
-  backgroundColor?: any; // TODO ThemeKeys
+  backgroundColor?: keyof ThemeKeys;
 };
 
 export const IconButton = ({
   onClick,
   testID,
   icon = "add",
-  text = "textButton",
+  text,
   circle = false,
+  backgroundColor = "primary",
 }: IconButtonProps) => {
   const [rounded, setRounded] = useState("");
 
@@ -32,8 +31,8 @@ export const IconButton = ({
 
   return (
     <div className="icon-button" onClick={onClick} data-testid={testID}>
-      <div className={`icon-button__image${rounded} bg-color`}>
-        <FontAwesomeIcon icon={["fas", icon]} />
+      <div className={`icon-button__image${rounded} bg-${backgroundColor}`}>
+        <Icon icon={icon} />
       </div>
 
       <div className="icon-button__text">{text}</div>
