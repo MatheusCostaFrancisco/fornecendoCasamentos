@@ -22,4 +22,15 @@
     input:focus-visible {
         outline: 1px solid rgb(30, 45, 255);
     }
+
+    &__error p {
+        font-size: 3vw;
+        margin-left: 10px;
+    }
+
+    &--error {
+        border-color: #DC3545 !important;
+        color: #DC3545 !important;
+        outline-color: #DC3545;
+    }
 }
