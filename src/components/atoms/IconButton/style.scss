@@ -19,10 +19,20 @@
  
     &__image {
       @include imageStyle();
+      &:active {
+        transform: scale(0.98);
+        box-shadow: 5px 4px 10px rgb(204 204 204);
+    }
     }
 
     &__image--rounded {
         @include imageStyle();
         border-radius: 100%;
+        &:active {
+            transform: scale(0.98);
+            box-shadow: 5px 4px 10px rgb(204 204 204);
+        }
     }
+
+  
 }

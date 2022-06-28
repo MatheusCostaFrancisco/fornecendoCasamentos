@@ -1,0 +1,24 @@
+@use '../../../css/colors';
+
+.evaluation {
+    display: flex;
+    flex-direction: row;
+
+    &__star--fill {
+        margin-right: 10px;
+        color: colors.$secondaryLight;
+
+        &:hover {
+            color: colors.$secondaryDark;
+        }
+    }
+
+    &__star--dont-fill {
+        margin-right: 10px;
+        color: #aaa;
+
+        &:hover {
+            color: colors.$secondaryDark;
+        }
+    }
+}

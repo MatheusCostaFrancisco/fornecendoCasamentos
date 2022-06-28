@@ -13,7 +13,8 @@
   font-size: calc(10px + 1vmin);
 }
 .input-text__label {
-  margin-left: 10px;
+  margin-left: 8px;
+  margin-bottom: 4px;
 }
 .input-text input:focus-visible {
   outline: 1px solid rgb(30, 45, 255);

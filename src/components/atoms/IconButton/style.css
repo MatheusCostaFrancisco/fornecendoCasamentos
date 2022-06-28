@@ -14,6 +14,10 @@
   width: 40px;
   height: 40px;
 }
+.icon-button__image:active {
+  transform: scale(0.98);
+  box-shadow: 5px 4px 10px rgb(204, 204, 204);
+}
 .icon-button__image--rounded {
   display: flex;
   justify-content: center;
@@ -21,4 +25,8 @@
   width: 40px;
   height: 40px;
   border-radius: 100%;
+}
+.icon-button__image--rounded:active {
+  transform: scale(0.98);
+  box-shadow: 5px 4px 10px rgb(204, 204, 204);
 }/*# sourceMappingURL=style.css.map */

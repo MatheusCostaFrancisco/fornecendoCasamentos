@@ -1,0 +1,23 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2em;
+  cursor: pointer;
+  outline: none;
+}
+.button__text {
+  text-align: center;
+  flex: 0.8;
+}
+.button__cion {
+  text-align: center;
+  flex: 0.2;
+}
+.button--rounded {
+  border-radius: 100px;
+}
+.button:active {
+  transform: scale(0.98);
+  box-shadow: 5px 4px 10px rgb(204, 204, 204);
+}/*# sourceMappingURL=style.css.map */
