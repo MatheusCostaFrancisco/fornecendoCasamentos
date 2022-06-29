@@ -17,13 +17,19 @@ $white: #FFFFFF;
     color: $white;
     transition: all;
 
-    &:hover {
-        background-color: $primaryLight;
+    &:hover {        
+        background-color: $primaryDark;
+        box-shadow: 5px 4px 10px rgb(204 204 204);
     }
 
     &:active {
-        background-color: $primaryDark;
+        background-color: $primaryLight;
     }
+}
+
+.bg-disabled {
+    background-color: #aaa;
+    color: grey;
 }
 
 .bg-primaryDark {

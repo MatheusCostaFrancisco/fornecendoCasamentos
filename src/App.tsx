@@ -5,9 +5,10 @@ import { InputText } from "./components/atoms/inputText";
 import { Avatar } from "./components/atoms/Avatar";
 import { Button } from "./components/atoms/Button/";
 import { Evaluation } from "./components/atoms/Evaluation";
+import { ItemMenu } from "./components/atoms/ItemMenu";
 function App() {
   const [value, setValue] = useState<string | undefined>("");
-  const [rank, setRank] = useState<number>(2);
+  const [rank, setRank] = useState<number>(4);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
@@ -83,6 +84,13 @@ function App() {
               setRank(item);
             }}
           />
+          <Evaluation rank={3} />
+        </div>
+
+        <div style={{ ...style, width: "100%" }}>
+          <h3>Item of Menu</h3>
+          <br />
+          <ItemMenu />
         </div>
       </header>
     </div>

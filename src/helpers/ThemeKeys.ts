@@ -8,4 +8,5 @@ export type ThemeKeys = {
   tertiary: string;
   tertiaryLight: string;
   tertiaryDark: string;
+  white: string;
 };

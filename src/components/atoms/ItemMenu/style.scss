@@ -1,0 +1,59 @@
+@use '../../../css/colors';
+
+
+.item-menu {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    cursor: pointer;
+
+    &__header__image {
+        background-image: url('../../../assets/images/fornecedor.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: aquamarine;
+        width: 100%;
+        height: calc(7rem + 9vw);
+        border-radius: 12px 12px 0px 0px;
+        
+    }
+
+    &__header__overlay {
+        display: flex;
+        flex: 1;
+        border-radius: 12px 12px 0px 0px;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: colors.$white;
+    }
+
+    &__footer {
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        color: colors.$primary;
+
+        &__text {
+            font-size: 1em;
+        }
+
+        &__icon {
+            font-size: 1em;
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.25);
+            border-radius: 0px 0px 12px 12px;
+            cursor: pointer;
+        }
+    }
+
+
+
+    
+}

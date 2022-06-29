@@ -21,10 +21,16 @@ code {
   transition: all;
 }
 .bg-primary:hover {
-  background-color: #FB5189;
+  background-color: #CB0144;
+  box-shadow: 5px 4px 10px rgb(204, 204, 204);
 }
 .bg-primary:active {
-  background-color: #CB0144;
+  background-color: #FB5189;
+}
+
+.bg-disabled {
+  background-color: #aaa;
+  color: grey;
 }
 
 .bg-primaryDark {

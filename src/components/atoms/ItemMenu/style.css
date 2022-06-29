@@ -1,0 +1,86 @@
+.bg-primary {
+  background-color: #FF0055;
+  color: #FFFFFF;
+  transition: all;
+}
+.bg-primary:hover {
+  background-color: #CB0144;
+  box-shadow: 5px 4px 10px rgb(204, 204, 204);
+}
+.bg-primary:active {
+  background-color: #FB5189;
+}
+
+.bg-disabled {
+  background-color: #aaa;
+  color: grey;
+}
+
+.bg-primaryDark {
+  background-color: #CB0144;
+  color: #FFFFFF;
+}
+.bg-primaryDark:hover {
+  background-color: #FF0055;
+}
+
+.bg-primaryLight {
+  background-color: #FB5189;
+  color: #FFFFFF;
+}
+
+.bg-secondary {
+  background-color: #B8860B;
+  color: #FFFFFF;
+}
+
+.bg-tertiary {
+  background-color: #FF0055;
+  color: #FFFFFF;
+}
+
+.item-menu {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  cursor: pointer;
+}
+.item-menu__header__image {
+  background-image: url("../../../assets/images/fornecedor.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: aquamarine;
+  width: 100%;
+  height: calc(7rem + 9vw);
+  border-radius: 12px 12px 0px 0px;
+}
+.item-menu__header__overlay {
+  display: flex;
+  flex: 1;
+  border-radius: 12px 12px 0px 0px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+}
+.item-menu__footer {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color: #FF0055;
+}
+.item-menu__footer__text {
+  font-size: 1em;
+}
+.item-menu__footer__icon {
+  font-size: 1em;
+}
+.item-menu__footer:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 12px 12px;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
