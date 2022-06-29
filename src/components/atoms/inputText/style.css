@@ -13,8 +13,18 @@
   font-size: calc(10px + 1vmin);
 }
 .input-text__label {
-  margin-left: 10px;
+  margin-left: 8px;
+  margin-bottom: 4px;
 }
 .input-text input:focus-visible {
   outline: 1px solid rgb(30, 45, 255);
+}
+.input-text__error p {
+  font-size: 3vw;
+  margin-left: 10px;
+}
+.input-text--error {
+  border-color: #DC3545 !important;
+  color: #DC3545 !important;
+  outline-color: #DC3545;
 }/*# sourceMappingURL=style.css.map */

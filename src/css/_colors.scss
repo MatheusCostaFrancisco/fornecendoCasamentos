@@ -2,9 +2,9 @@ $primary: #FF0055;
 $primaryLight: #FB5189;
 $primaryDark: #CB0144;
 
-$secondary: #FF0055;
-$secondaryLight: #FF0055;
-$secondaryDark: #FF0055;
+$secondary: #B8860B;
+$secondaryLight: #ECB222;
+$secondaryDark: #946900;
 
 $tertiary: #FF0055;
 $tertiaryLight: #FF0055;
@@ -15,11 +15,30 @@ $white: #FFFFFF;
 .bg-primary {
     background-color: $primary;
     color: $white;
+    transition: all;
+
+    &:hover {        
+        background-color: $primaryDark;
+        box-shadow: 5px 4px 10px rgb(204 204 204);
+    }
+
+    &:active {
+        background-color: $primaryLight;
+    }
+}
+
+.bg-disabled {
+    background-color: #aaa;
+    color: grey;
 }
 
 .bg-primaryDark {
     background-color: $primaryDark;
     color: $white;
+
+    &:hover {
+        background-color: $primary;
+    }
 }
 
 .bg-primaryLight {

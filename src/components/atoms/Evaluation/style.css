@@ -1,0 +1,59 @@
+.bg-primary {
+  background-color: #FF0055;
+  color: #FFFFFF;
+  transition: all;
+}
+.bg-primary:hover {
+  background-color: #CB0144;
+  box-shadow: 5px 4px 10px rgb(204, 204, 204);
+}
+.bg-primary:active {
+  background-color: #FB5189;
+}
+
+.bg-disabled {
+  background-color: #aaa;
+  color: grey;
+}
+
+.bg-primaryDark {
+  background-color: #CB0144;
+  color: #FFFFFF;
+}
+.bg-primaryDark:hover {
+  background-color: #FF0055;
+}
+
+.bg-primaryLight {
+  background-color: #FB5189;
+  color: #FFFFFF;
+}
+
+.bg-secondary {
+  background-color: #B8860B;
+  color: #FFFFFF;
+}
+
+.bg-tertiary {
+  background-color: #FF0055;
+  color: #FFFFFF;
+}
+
+.evaluation {
+  display: flex;
+  flex-direction: row;
+}
+.evaluation__star--fill {
+  margin-right: 10px;
+  color: #ECB222;
+}
+.evaluation__star--fill:hover {
+  color: #946900;
+}
+.evaluation__star--dont-fill {
+  margin-right: 10px;
+  color: #aaa;
+}
+.evaluation__star--dont-fill:hover {
+  color: #946900;
+}/*# sourceMappingURL=style.css.map */

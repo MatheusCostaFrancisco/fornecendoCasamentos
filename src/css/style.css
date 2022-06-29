@@ -18,11 +18,27 @@ code {
 .bg-primary {
   background-color: #FF0055;
   color: #FFFFFF;
+  transition: all;
+}
+.bg-primary:hover {
+  background-color: #CB0144;
+  box-shadow: 5px 4px 10px rgb(204, 204, 204);
+}
+.bg-primary:active {
+  background-color: #FB5189;
+}
+
+.bg-disabled {
+  background-color: #aaa;
+  color: grey;
 }
 
 .bg-primaryDark {
   background-color: #CB0144;
   color: #FFFFFF;
+}
+.bg-primaryDark:hover {
+  background-color: #FF0055;
 }
 
 .bg-primaryLight {
@@ -31,7 +47,7 @@ code {
 }
 
 .bg-secondary {
-  background-color: #FF0055;
+  background-color: #B8860B;
   color: #FFFFFF;
 }
 
