@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/fornecendoCasamentos/static/css/main.24068872.css",
+    "main.js": "/fornecendoCasamentos/static/js/main.a7306520.js",
+    "static/js/787.c123b6b3.chunk.js": "/fornecendoCasamentos/static/js/787.c123b6b3.chunk.js",
+    "static/media/fornecedor.jpg": "/fornecendoCasamentos/static/media/fornecedor.1e3092c542ca1170376e.jpg",
+    "index.html": "/fornecendoCasamentos/index.html",
+    "main.24068872.css.map": "/fornecendoCasamentos/static/css/main.24068872.css.map",
+    "main.a7306520.js.map": "/fornecendoCasamentos/static/js/main.a7306520.js.map",
+    "787.c123b6b3.chunk.js.map": "/fornecendoCasamentos/static/js/787.c123b6b3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.24068872.css",
+    "static/js/main.a7306520.js"
+  ]
+}
