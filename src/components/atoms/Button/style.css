@@ -9,8 +9,15 @@
 .button__text {
   text-align: center;
   flex: 0.8;
+  font-weight: 600;
 }
-.button__cion {
+.button__text--loading {
+  text-align: center;
+  flex: 0.8;
+  font-weight: 600;
+  padding-right: 50px;
+}
+.button__icon {
   text-align: center;
   flex: 0.2;
 }

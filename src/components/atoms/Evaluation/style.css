@@ -1,5 +1,5 @@
 .bg-primary {
-  background-color: #FF0055;
+  background-color: #ec6385;
   color: #FFFFFF;
   transition: all;
 }
@@ -21,7 +21,7 @@
   color: #FFFFFF;
 }
 .bg-primaryDark:hover {
-  background-color: #FF0055;
+  background-color: #ec6385;
 }
 
 .bg-primaryLight {

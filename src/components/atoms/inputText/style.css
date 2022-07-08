@@ -6,7 +6,7 @@
 }
 .input-text__input {
   height: 3em;
-  border: 1px solid #141414;
+  border: 1px solid #AAAAAA;
   border-radius: 6px;
   width: 100%;
   padding-left: 15px;
@@ -15,13 +15,15 @@
 .input-text__label {
   margin-left: 8px;
   margin-bottom: 4px;
+  font-weight: bold;
 }
 .input-text input:focus-visible {
   outline: 1px solid rgb(30, 45, 255);
 }
 .input-text__error p {
-  font-size: 3vw;
+  font-size: 0.9rem;
   margin-left: 10px;
+  color: #DC3545 !important;
 }
 .input-text--error {
   border-color: #DC3545 !important;

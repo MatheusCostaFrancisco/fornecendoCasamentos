@@ -51,7 +51,7 @@ export const Button = ({
           <Spinner />
         </div>
       )}
-      <div className="button__text">{label}</div>
+      <p className={`button__text${loading ? "--loading" : ""}`}>{label}</p>
     </div>
   );
 };

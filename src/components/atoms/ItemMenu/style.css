@@ -1,5 +1,5 @@
 .bg-primary {
-  background-color: #FF0055;
+  background-color: #ec6385;
   color: #FFFFFF;
   transition: all;
 }
@@ -21,7 +21,7 @@
   color: #FFFFFF;
 }
 .bg-primaryDark:hover {
-  background-color: #FF0055;
+  background-color: #ec6385;
 }
 
 .bg-primaryLight {
@@ -71,7 +71,7 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  color: #FF0055;
+  color: #ec6385;
 }
 .item-menu__footer__text {
   font-size: 1em;

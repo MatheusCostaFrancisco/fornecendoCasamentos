@@ -8,6 +8,7 @@ type InputTextProps = {
   placeholder?: string;
   testID?: string;
   errorLog?: string;
+  type?: "text" | "email" | "password";
 };
 
 export const InputText = ({
@@ -16,6 +17,7 @@ export const InputText = ({
   onChange,
   placeholder,
   errorLog,
+  type,
 }: InputTextProps) => {
   const [state, setState] = useState<string | undefined>(value || "");
   const [errorClass, setErrorClass] = useState<string>("");
@@ -38,12 +40,13 @@ export const InputText = ({
         {label}
       </label>
       <input
+        type={type}
         className={`input-text__input ${errorClass}`}
         onChange={(event) => onChange(event)}
         id="inputText"
-        type="text"
         placeholder={placeholder}
         value={state}
+        maxLength={30}
       />
       {errorLog && (
         <div className="input-text__error">
