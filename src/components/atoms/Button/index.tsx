@@ -3,13 +3,14 @@ import { IconName } from "@fortawesome/fontawesome-svg-core";
 import { Icon } from "../Icon/Icon";
 
 import "./style.css";
-import { ThemeKeys } from "../../../helpers/ThemeKeys";
+import { ThemeKeys, ThemeKeysKey } from "../../../helpers/ThemeKeys";
 import { Spinner } from "../Spinner";
 
 export type ButtonProps = {
   label: string;
   onClick: () => void;
   icon?: IconName;
+  iconColor?: keyof ThemeKeys;
   rounded?: boolean;
   backgroundColor?: keyof ThemeKeys;
   loading?: boolean;
@@ -20,6 +21,7 @@ export const Button = ({
   label,
   onClick,
   icon,
+  iconColor = "white",
   rounded = false,
   backgroundColor = "primary",
   loading = false,
@@ -42,7 +44,7 @@ export const Button = ({
     >
       {icon && !loading && (
         <div className="button__icon">
-          <Icon icon={icon} />
+          <Icon icon={icon} color={iconColor} />
         </div>
       )}
 

@@ -10,6 +10,10 @@ const providersController = {
     const { data: providers } = await api.get(`/providers?name_like=${name}`);
     return providers as ProviderSchema[];
   },
+  getById: async (id: string) => {
+    const { data: providers } = await api.get(`/providers?id=${id}`);
+    return providers[0] as ProviderSchema;
+  },
   authentication: async (mail: string, pass: string) => {
     const { data: providers } = await api.get(
       `/providers?mail=${mail}&pass=${pass}`

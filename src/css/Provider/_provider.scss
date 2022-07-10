@@ -1,0 +1,51 @@
+.provider {
+  display: flex;
+  flex-direction: column;
+  column-gap: 20px;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    &__infos {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  &__gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+
+  &__infos {
+    flex: 1;
+    gap: 15px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    align-items: center;
+  }
+}

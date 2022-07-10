@@ -6,7 +6,7 @@ import { Provider as ReduxProvider } from "react-redux";
 import Home from "../Pages/HomePage";
 import Login from "../Pages/Login";
 import Providers from "../Pages/Providers";
-import Provider from "../Pages/Login";
+import Provider from "../Pages/Provider";
 import store from "../redux/store";
 
 function RoutesApp() {
@@ -17,7 +17,8 @@ function RoutesApp() {
           <Route path="/Home" element={<Home />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Providers" element={<Providers />} />
-          <Route path="/providers/:id" element={<Provider />} />
+          <Route path="/provider/:id" element={<Provider />} />
+          <Route path="*" element={<Login />} />
         </Routes>
       </ReduxProvider>
     </BrowserRouter>
