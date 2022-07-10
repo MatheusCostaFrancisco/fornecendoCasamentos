@@ -42,16 +42,15 @@
 .evaluation {
   display: flex;
   flex-direction: row;
+  gap: 5px;
 }
 .evaluation__star--fill {
-  margin-right: 10px;
   color: #ECB222;
 }
 .evaluation__star--fill:hover {
   color: #946900;
 }
 .evaluation__star--dont-fill {
-  margin-right: 10px;
   color: #aaa;
 }
 .evaluation__star--dont-fill:hover {

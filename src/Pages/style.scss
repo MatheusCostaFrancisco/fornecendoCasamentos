@@ -1,0 +1,21 @@
+@mixin defaultHome {
+    margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+}
+
+.home {
+    &__content {
+        @include defaultHome;
+        row-gap: 20px;
+        column-gap: 20%;
+    }
+
+    &__list {
+        @include defaultHome;
+        row-gap: 20px;
+        column-gap: 2%;
+    }
+}

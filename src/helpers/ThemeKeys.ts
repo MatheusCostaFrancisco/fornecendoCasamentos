@@ -9,4 +9,21 @@ export type ThemeKeys = {
   tertiaryLight: string;
   tertiaryDark: string;
   white: string;
+  gray: string;
+  success: string;
+};
+
+export const ThemeKeysKey = {
+  primary: "#ec6385",
+  primaryLight: "#FB5189",
+  primaryDark: "#CB0144",
+  secondary: "#B8860B",
+  secondaryLight: "#ECB222",
+  secondaryDark: "#946900",
+  tertiary: "#FF0055",
+  tertiaryLight: "#FF0055",
+  tertiaryDark: "#FF0055",
+  white: "#FFFFFF",
+  gray: "#CCCCCC",
+  success: "#07bc0c",
 };

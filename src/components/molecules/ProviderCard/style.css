@@ -1,0 +1,79 @@
+.bg-primary {
+  background-color: #ec6385;
+  color: #FFFFFF;
+  transition: all;
+}
+.bg-primary:hover {
+  background-color: #CB0144;
+  box-shadow: 5px 4px 10px rgb(204, 204, 204);
+}
+.bg-primary:active {
+  background-color: #FB5189;
+}
+
+.bg-disabled {
+  background-color: #aaa;
+  color: grey;
+}
+
+.bg-primaryDark {
+  background-color: #CB0144;
+  color: #FFFFFF;
+}
+.bg-primaryDark:hover {
+  background-color: #ec6385;
+}
+
+.bg-primaryLight {
+  background-color: #FB5189;
+  color: #FFFFFF;
+}
+
+.bg-secondary {
+  background-color: #B8860B;
+  color: #FFFFFF;
+}
+
+.bg-tertiary {
+  background-color: #FF0055;
+  color: #FFFFFF;
+}
+
+.provider-card {
+  width: 400px;
+  padding: 10px;
+  border: 1px solid #AAA;
+  display: flex;
+  border-radius: 12px;
+}
+.provider-card__infos {
+  display: flex;
+  flex-direction: column;
+}
+.provider-card__infos__classification {
+  display: flex;
+  flex-direction: row;
+}
+.provider-card__evaluation {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-size: 12px;
+}
+.provider-card__pricing {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-size: 12px;
+}
+.provider-card__avatar {
+  margin-right: 10px;
+}
+.provider-card__name {
+  font-weight: 600;
+  flex: 1;
+}
+.provider-card__address {
+  margin-top: 10px;
+  font-size: 14px;
+}/*# sourceMappingURL=style.css.map */

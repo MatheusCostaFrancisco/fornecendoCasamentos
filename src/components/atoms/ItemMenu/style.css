@@ -45,6 +45,7 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
   cursor: pointer;
+  width: 230px;
 }
 .item-menu__header__image {
   background-image: url("../../../assets/images/fornecedor.jpg");
@@ -52,7 +53,7 @@
   background-size: cover;
   background-color: aquamarine;
   width: 100%;
-  height: calc(7rem + 9vw);
+  height: calc(7rem + 6vw);
   border-radius: 12px 12px 0px 0px;
 }
 .item-menu__header__overlay {

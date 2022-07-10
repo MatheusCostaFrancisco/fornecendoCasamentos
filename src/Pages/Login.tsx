@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { InputText } from "../components/atoms/InputText";
 import Logo from "../assets/images/logowhite.png";
 import { toast } from "react-toastify";
 import { Button } from "../components/atoms/Button";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -10,9 +11,19 @@ export default function Login() {
   const [errorLog, setErrorLog] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    return () => {
+      setEmail("");
+      setPassword("");
+    };
+  }, []);
+
   const handleChangeEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (typeof event.target.value === "string") {
       setEmail(event.target.value);
+      setErrorLog("");
     }
   };
 
@@ -24,13 +35,30 @@ export default function Login() {
 
   const handleLogin = () => {
     setIsLoading(true);
+
     setTimeout(() => {
       if (!password || !email) {
         setErrorLog("Preenchimento Obrigatório");
         toast.error("Preencha os campos de email e senha para logar!");
       }
+      console.log(typeof password);
+      console.log(typeof email);
       if (password === "123456" && email === "matheusccontato@gmail.com") {
-        toast.success("Logado com sucesso");
+        toast.success("Logado com sucesso. Bem vindo a área do cliente!");
+        navigate("/Home", {
+          state: {
+            user: "client",
+          },
+        });
+      } else if (password === "123456" && email === "admin@buffetxpe.com") {
+        toast.success("Logado com sucesso, Bem vindo a área do Fornecedor");
+        navigate("/Home", {
+          state: {
+            user: "provider",
+          },
+        });
+      } else {
+        toast.error("Não foi possível identenficar o usuário.");
       }
 
       setIsLoading(false);
@@ -39,8 +67,8 @@ export default function Login() {
 
   return (
     <div className="background">
-      <div className="wrapper">
-        <div className="wrapper__logo">
+      <div className="wrapper__Login">
+        <div className="wrapper__Login__logo">
           <img src={Logo} alt="Logotipo da empresa" />
         </div>
 

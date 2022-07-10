@@ -1,0 +1,49 @@
+@import '../../../css/colors';
+
+@mixin flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.provider-card {
+    width: 400px;
+    padding: 10px;
+    border: 1px solid #AAA;
+    display: flex;
+    border-radius: 12px;
+
+    &__infos {
+        display: flex;
+        flex-direction: column;
+
+        &__classification {
+            @include flexRow;
+        }
+    }
+
+    &__evaluation {
+        @include flexRow;
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    &__pricing {
+        @include flexRow;
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    &__avatar {
+        margin-right: 10px;
+    }
+
+    &__name{
+        font-weight: 600;
+        flex: 1;
+    }
+
+    &__address {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,20 @@
+@use '../../../css/colors';
+
+.evaluation-price {
+    display: flex;
+    flex-direction: row;
+
+    &__icon--fill {
+        color: colors.$success;
+    }
+
+    &__icon--dont-fill {
+        color: colors.$gray;
+    }
+
+    &--spacing {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+    }
+}

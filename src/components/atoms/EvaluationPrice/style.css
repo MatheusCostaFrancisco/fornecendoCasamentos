@@ -1,0 +1,56 @@
+.bg-primary {
+  background-color: #ec6385;
+  color: #FFFFFF;
+  transition: all;
+}
+.bg-primary:hover {
+  background-color: #CB0144;
+  box-shadow: 5px 4px 10px rgb(204, 204, 204);
+}
+.bg-primary:active {
+  background-color: #FB5189;
+}
+
+.bg-disabled {
+  background-color: #aaa;
+  color: grey;
+}
+
+.bg-primaryDark {
+  background-color: #CB0144;
+  color: #FFFFFF;
+}
+.bg-primaryDark:hover {
+  background-color: #ec6385;
+}
+
+.bg-primaryLight {
+  background-color: #FB5189;
+  color: #FFFFFF;
+}
+
+.bg-secondary {
+  background-color: #B8860B;
+  color: #FFFFFF;
+}
+
+.bg-tertiary {
+  background-color: #FF0055;
+  color: #FFFFFF;
+}
+
+.evaluation-price {
+  display: flex;
+  flex-direction: row;
+}
+.evaluation-price__icon--fill {
+  color: #07bc0c;
+}
+.evaluation-price__icon--dont-fill {
+  color: #CCCCCC;
+}
+.evaluation-price--spacing {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}/*# sourceMappingURL=style.css.map */

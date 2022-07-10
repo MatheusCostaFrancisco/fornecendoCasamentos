@@ -1,0 +1,11 @@
+.wrapper {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper__content {
+    width: 75vw;
+    min-height: 50vh;
+}

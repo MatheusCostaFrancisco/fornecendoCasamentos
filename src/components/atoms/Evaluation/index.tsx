@@ -1,13 +1,17 @@
 import React from "react";
+import { SizeProp } from "@fortawesome/fontawesome-svg-core";
+import { ThemeKeys } from "../../../helpers/ThemeKeys";
 import { Icon } from "../Icon/Icon";
 import "./style.css";
 
 export type EvaluationProps = {
   rank: number;
   onClick?: (item: number) => void;
+  color?: keyof ThemeKeys;
+  size?: SizeProp;
 };
 
-export const Evaluation = ({ rank, onClick }: EvaluationProps) => {
+export const Evaluation = ({ rank, onClick, color, size }: EvaluationProps) => {
   const numberStars = Array.from(Array(5).keys());
 
   const handleChange = (item: number) => {
@@ -25,7 +29,7 @@ export const Evaluation = ({ rank, onClick }: EvaluationProps) => {
               key={item++}
               className="evaluation__star--fill"
             >
-              <Icon icon="star" />
+              <Icon icon="star" color={color} sizeIcon={size} />
             </div>
           );
         }
@@ -35,7 +39,7 @@ export const Evaluation = ({ rank, onClick }: EvaluationProps) => {
             key={item++}
             className="evaluation__star--dont-fill"
           >
-            <Icon icon="star" />
+            <Icon icon="star" sizeIcon={size} />
           </div>
         );
       })}

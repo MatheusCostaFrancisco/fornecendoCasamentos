@@ -8,7 +8,7 @@
     background: linear-gradient(90deg, rgba(255,67,130,0.2553396358543417) 0%, rgba(250,203,88,0.07326680672268904) 100%);
 }
 
-.wrapper {
+.wrapper__Login {
     width: 25vw;
     background-color: white;
     
@@ -17,17 +17,41 @@
     border-radius: 16px;
 
     &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
         img {
             width: 300px;
+
+            @media only screen and (max-width: 900px) {
+                width: 280px;
+            }
+
+            @media only screen and (max-width: 650px) {
+                width: 250px;
+            }
+
+            @media only screen and (max-width: 450px) {
+                width: 200px;
+            }
         }
     }
 
-    @media only screen and (max-width: 900px) {
+    @media screen and (max-width: 1250px) {
+        width: 35vw;
+    }
+
+    @media  screen and (max-width: 900px) {
+        width: 40vw;
+    }
+
+    @media only screen and (max-width: 650px) {
         width: 60vw;
     }
 
-    @media only screen and (max-width: 900px) {
-        width: 80vw;
+    @media only screen and (max-width: 500px) {
+        width: 90vw;
     }
 
     & div + div {

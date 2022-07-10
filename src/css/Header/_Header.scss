@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: $primary;
+    align-items: center;
+    padding: 10px;
+    color: $white;
+    font-weight: 600;
+
+    &__menu {
+        margin-left: 20px;
+    }
+
+    &__user {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+
+        &__text {
+            @media screen and (max-width: 550px) {
+                display: none;
+            }
+        }
+    }
+}

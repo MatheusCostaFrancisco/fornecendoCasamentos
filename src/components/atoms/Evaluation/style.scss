@@ -3,9 +3,9 @@
 .evaluation {
     display: flex;
     flex-direction: row;
+    gap: 5px;
 
     &__star--fill {
-        margin-right: 10px;
         color: colors.$secondaryLight;
 
         &:hover {
@@ -14,7 +14,6 @@
     }
 
     &__star--dont-fill {
-        margin-right: 10px;
         color: #aaa;
 
         &:hover {
