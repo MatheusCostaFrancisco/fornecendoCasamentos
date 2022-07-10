@@ -4,6 +4,10 @@ import Logo from "../assets/images/logowhite.png";
 import { toast } from "react-toastify";
 import { Button } from "../components/atoms/Button";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import userController from "../infra/controllers/user.controller";
+import clientController from "../infra/controllers/client.controller";
+import { login } from "../redux/userSlice";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -12,6 +16,7 @@ export default function Login() {
   const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     return () => {
@@ -33,36 +38,48 @@ export default function Login() {
     }
   };
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     setIsLoading(true);
 
-    setTimeout(() => {
-      if (!password || !email) {
-        setErrorLog("Preenchimento Obrigatório");
-        toast.error("Preencha os campos de email e senha para logar!");
-      }
-      console.log(typeof password);
-      console.log(typeof email);
-      if (password === "123456" && email === "matheusccontato@gmail.com") {
-        toast.success("Logado com sucesso. Bem vindo a área do cliente!");
-        navigate("/Home", {
-          state: {
-            user: "client",
-          },
-        });
-      } else if (password === "123456" && email === "admin@buffetxpe.com") {
-        toast.success("Logado com sucesso, Bem vindo a área do Fornecedor");
-        navigate("/Home", {
-          state: {
-            user: "provider",
-          },
-        });
-      } else {
-        toast.error("Não foi possível identenficar o usuário.");
-      }
+    if (!password || !email) {
+      setErrorLog("Preenchimento Obrigatório");
+      toast.error("Preencha os campos de email e senha para logar!");
+      return;
+    }
 
-      setIsLoading(false);
-    }, 1000);
+    const user = await userController.authentication(email, password);
+
+    if (user) {
+      if (user.type === "client") {
+        const getClient = await clientController.authentication(
+          email,
+          password
+        );
+        dispatch(
+          login({
+            valueClient: getClient,
+            type: "client",
+          })
+        );
+        toast.success("Logado com sucesso. Bem vindo a área do cliente!");
+      } else {
+        const getProvider = await clientController.authentication(
+          email,
+          password
+        );
+        dispatch(
+          login({
+            valueClient: getProvider,
+            type: "provider",
+          })
+        );
+        toast.success("Logado com sucesso, Bem vindo a área do Fornecedor");
+      }
+      navigate("/Home");
+    } else {
+      toast.error("Não foi possível identenficar o usuário.");
+    }
+    setIsLoading(false);
   };
 
   return (

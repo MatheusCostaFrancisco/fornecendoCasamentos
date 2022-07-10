@@ -1,4 +1,4 @@
-.home__content {
+.home-menu__content {
   margin-top: 15px;
   display: flex;
   justify-content: center;
@@ -8,7 +8,7 @@
   -moz-column-gap: 20%;
        column-gap: 20%;
 }
-.home__list {
+.home-menu__list {
   margin-top: 15px;
   display: flex;
   justify-content: center;
@@ -17,10 +17,4 @@
   row-gap: 20px;
   -moz-column-gap: 2%;
        column-gap: 2%;
-}
-.home__loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
 }/*# sourceMappingURL=style.css.map */

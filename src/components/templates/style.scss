@@ -6,7 +6,7 @@
     flex-wrap: wrap;
 }
 
-.home {
+.home-menu {
     &__content {
         @include defaultHome;
         row-gap: 20px;
@@ -17,12 +17,5 @@
         @include defaultHome;
         row-gap: 20px;
         column-gap: 2%;
-    }
-
-    &__loading {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 50px;
     }
 }

@@ -1,0 +1,10 @@
+.provider-list {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  -moz-column-gap: 2%;
+       column-gap: 2%;
+}/*# sourceMappingURL=style.css.map */

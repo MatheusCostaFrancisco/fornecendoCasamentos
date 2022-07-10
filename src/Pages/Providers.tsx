@@ -1,46 +1,40 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { Spinner } from "../components/atoms/Spinner";
 import { Wrapper } from "../components/atoms/Wrapper/Wrapper";
 import { SearchBar } from "../components/molecules/Searchbar/Searchbar";
 import Header from "../components/organisms/Header/Header";
 import ProviderList from "../components/organisms/ProviderList/ProviderList";
-import HomeMenu from "../components/templates/HomeMenu";
-import providersController from "../infra/controllers/providers.controller";
-import { ProviderSchema } from "../infra/Schemas/Provider.schema";
 import { ThemeKeysKey } from "../helpers/ThemeKeys";
-import "./style.css";
+import { ProviderSchema } from "../infra/Schemas/Provider.schema";
+import { ReduxProps } from "../redux/userSlice";
 
-export default function Home() {
-  const navigate = useNavigate();
-  const handleNavigation = (routeName: string) => {
-    navigate(`/${routeName}`);
-  };
-
+export default function Providers() {
   const [search, setSearch] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
   const [providers, setProviders] = useState<ProviderSchema[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const selector = useSelector((state: ReduxProps) => state.user);
 
-  async function loadProviders() {
+  async function loadData() {
     setIsLoading(true);
+    if (selector.type === "client") {
+      setProviders(selector.valueClient?.providers || []);
+    }
 
-    const getProviders = await providersController.getByName(search);
-    setProviders(getProviders);
     setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 500);
   }
 
   useEffect(() => {
-    loadProviders();
-  }, [search]);
+    loadData();
+  }, []);
 
   return (
     <div>
-      <Header name="Home" />
+      <Header name="Fornecedores" />
       <Wrapper>
-        <div className="home">
+        <div className="provider-page">
           <div className="home__searchBar">
             <SearchBar
               placeholder="Digite o nome do fornecedor"
@@ -50,13 +44,7 @@ export default function Home() {
           </div>
           {!isLoading ? (
             <div>
-              {!search ? (
-                <HomeMenu handleNavigation={handleNavigation} />
-              ) : (
-                <div className="home__list">
-                  <ProviderList providers={providers} />
-                </div>
-              )}
+              <ProviderList providers={providers} />
             </div>
           ) : (
             <div className="home__loading">

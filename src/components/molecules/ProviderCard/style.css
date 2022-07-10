@@ -45,6 +45,15 @@
   border: 1px solid #AAA;
   display: flex;
   border-radius: 12px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 900px) {
+  .provider-card {
+    width: 300px;
+  }
+}
+.provider-card:hover {
+  transform: scale(0.98);
 }
 .provider-card__infos {
   display: flex;

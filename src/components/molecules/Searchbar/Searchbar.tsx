@@ -15,7 +15,7 @@ export function SearchBar({
   onChange,
   placeholder = "Digite um nome",
 }: SearchBarProps) {
-  const debounce = useDebounce(onChange, 1000);
+  const debounce = useDebounce(onChange, 500);
   const [displayValue, setDisplayValye] = useState(value);
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setDisplayValye(event.target.value);

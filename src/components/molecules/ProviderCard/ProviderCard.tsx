@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { ProviderSchema } from "../../../infra/Schemas/Provider.schema";
 import { Avatar } from "../../atoms/Avatar";
 import { Evaluation } from "../../atoms/Evaluation";
 import { EvaluationPrice } from "../../atoms/EvaluationPrice";
+import image from "../../../assets/images/fornecedor.jpg";
 
 import "./style.css";
 
@@ -11,10 +13,17 @@ export type ProviderCardProps = {
 };
 
 export default function ProviderCard({ item }: ProviderCardProps) {
+  const navigate = useNavigate();
+  const handleNavigation = (routeName: string) => {
+    navigate(`/${routeName}`);
+  };
   return (
-    <div className="provider-card">
+    <div
+      className="provider-card"
+      onClick={() => handleNavigation(`/providers/${item.id}`)}
+    >
       <div className="provider-card__avatar">
-        <Avatar alt="nada" size="small" />
+        <Avatar alt="nada" size="small" url={image} />
       </div>
       <div className="provider-card__info">
         <div className="provider-card__name">{item.name}</div>
