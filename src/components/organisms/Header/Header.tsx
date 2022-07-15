@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Avatar } from "../../atoms/Avatar";
 import { Icon } from "../../atoms/Icon/Icon";
 import { useSelector } from "react-redux";
-import { selectorUser, State } from "../../../redux/userSlice";
+import { selectorUser } from "../../../redux/userSlice";
 import { ProviderSchema } from "../../../infra/Schemas/Provider.schema";
 import { ClientSchema } from "../../../infra/Schemas/Client.schema";
 

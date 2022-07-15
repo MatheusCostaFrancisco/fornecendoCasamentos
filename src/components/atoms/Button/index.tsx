@@ -3,7 +3,7 @@ import { IconName } from "@fortawesome/fontawesome-svg-core";
 import { Icon } from "../Icon/Icon";
 
 import "./style.css";
-import { ThemeKeys, ThemeKeysKey } from "../../../helpers/ThemeKeys";
+import { ThemeKeys } from "../../../helpers/ThemeKeys";
 import { Spinner } from "../Spinner";
 
 export type ButtonProps = {

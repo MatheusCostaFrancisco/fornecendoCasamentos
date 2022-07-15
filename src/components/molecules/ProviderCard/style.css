@@ -42,10 +42,13 @@
 .provider-card {
   width: 400px;
   padding: 10px;
-  border: 1px solid #AAA;
+  border: 1px solid #BABABA;
   display: flex;
   border-radius: 12px;
   cursor: pointer;
+  text-decoration: none;
+  color: #000;
+  transition: 0.2s;
 }
 @media only screen and (max-width: 900px) {
   .provider-card {
@@ -53,7 +56,8 @@
   }
 }
 .provider-card:hover {
-  transform: scale(0.98);
+  transform: translateY(-3%);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .provider-card__infos {
   display: flex;

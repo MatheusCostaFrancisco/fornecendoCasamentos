@@ -1,0 +1,20 @@
+.card-product {
+  padding: 30px;
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  gap: 5px;
+  transition: 0.2s;
+
+  &__name {
+    text-align: center;
+  }
+
+  &:hover { 
+    transform: translateY(-3%);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+}
