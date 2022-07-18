@@ -14,6 +14,8 @@ import LikeButton from "../components/atoms/LikeButton/LikeButton";
 import planingController from "../infra/controllers/planning.controllers";
 import { useSelector } from "react-redux";
 import { ReduxProps } from "../redux/userSlice";
+import { PlanningSchema } from "../infra/Schemas/Planning.schema";
+import { toast } from "react-toastify";
 
 type ProductPageType = ProductSchema & {
   liked: boolean;
@@ -24,6 +26,7 @@ function Provider() {
   const [product, setProduct] = useState<ProductPageType>(
     {} as ProductPageType
   );
+  const [planning, setPlanning] = useState<PlanningSchema>();
   const [loading, setLoading] = useState(true);
   const selector = useSelector((state: ReduxProps) => state.user);
 
@@ -37,24 +40,56 @@ function Provider() {
       selector.valueClient?.id || ""
     );
 
-    const products = productsPlanning.map((x) => x.products).flat();
-    return products;
+    return productsPlanning;
   }
 
   async function loadData() {
     setLoading(true);
+    setPlanning(undefined);
     const productOfList = await getProduct();
-    const productsOfPlanning = await getProductByPlanning();
+    const plannings = await getProductByPlanning();
+
+    const productsOfPlanning = plannings.map((x) => x.products).flat();
+
+    const findProduct = productsOfPlanning.find(
+      (x) => x.id === productOfList?.id
+    );
+
+    if (findProduct) {
+      const findPlanning = plannings.find((x) =>
+        x.products.includes(findProduct)
+      );
+      if (findPlanning) setPlanning(findPlanning);
+    }
 
     const formatted = {
       ...productOfList,
-      liked: !!productsOfPlanning.find((x) => x.id === productOfList?.id),
+      liked: !!findProduct,
     };
 
     setProduct(formatted);
-
     setLoading(false);
   }
+
+  const handleSaveProduct = async () => {
+    await planingController.saveProductInPlanning(
+      product,
+      selector.valueClient!,
+      product.providerId,
+      planning
+    );
+    toast("Salvo com sucesso");
+    await loadData();
+  };
+
+  const handleDeleteProcut = async () => {
+    await planingController.deleteProductInPlanning(
+      product,
+      planning?.id || ""
+    );
+    toast.info("Deletado com sucesso");
+    await loadData();
+  };
 
   useEffect(() => {
     loadData();
@@ -70,7 +105,9 @@ function Provider() {
               <div className="product__like-button">
                 <LikeButton
                   isLiked={product.liked}
-                  onClick={() => console.log("click")}
+                  onClick={() =>
+                    !product.liked ? handleSaveProduct() : handleDeleteProcut()
+                  }
                 />
               </div>
               <div className="product__avatar">

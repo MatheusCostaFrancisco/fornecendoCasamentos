@@ -19,12 +19,11 @@ export default function Providers() {
 
   async function loadData() {
     setIsLoading(true);
-    console.log(selector);
     if (selector.type === "client") {
       const getProviders = await planingController.getProvidersByClient(
         selector.valueClient?.id || ""
       );
-      console.log("getProviders", getProviders);
+
       setProviders(getProviders || []);
     }
 

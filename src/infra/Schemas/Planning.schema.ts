@@ -3,6 +3,7 @@ import { ProductSchema } from "./Product.schema";
 import { ProviderSchema } from "./Provider.schema";
 
 export type PlanningSchema = {
+  id: string;
   providerId: string;
   clientId: string;
   provider: ProviderSchema;

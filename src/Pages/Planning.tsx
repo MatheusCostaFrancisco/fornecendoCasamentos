@@ -25,7 +25,6 @@ export default function Providers() {
 
   async function loadData() {
     setIsLoading(true);
-    console.log(selector);
     if (selector.type === "client") {
       const getPlannings = await planingController.getByClientId(
         selector.valueClient?.id || ""

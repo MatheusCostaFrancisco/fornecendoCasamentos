@@ -12,15 +12,7 @@ export default function LikeButton({
 }: LikeButtonProps) {
   return (
     <div onClick={onClick}>
-      {isLiked ? (
-        <div>
-          <Icon icon="heart" sizeIcon="2x" color="error" />
-        </div>
-      ) : (
-        <div>
-          <Icon icon="heart-broken" sizeIcon="2x" color="error" />
-        </div>
-      )}
+      <Icon icon="heart" sizeIcon="2x" color={isLiked ? "error" : undefined} />
     </div>
   );
 }

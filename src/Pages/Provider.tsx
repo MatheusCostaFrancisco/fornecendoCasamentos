@@ -6,7 +6,6 @@ import { Evaluation } from "../components/atoms/Evaluation";
 import { EvaluationPrice } from "../components/atoms/EvaluationPrice";
 import { Wrapper } from "../components/atoms/Wrapper/Wrapper";
 import Gallery from "../components/Gallery/Gallery";
-import CardProduct from "../components/molecules/ProductCard/ProductCard";
 import Header from "../components/organisms/Header/Header";
 import ProductList from "../components/organisms/ProductList/ProductList";
 import productsController from "../infra/controllers/product.controller";
