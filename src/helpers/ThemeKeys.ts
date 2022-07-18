@@ -11,6 +11,7 @@ export type ThemeKeys = {
   white: string;
   gray: string;
   success: string;
+  error: string;
 };
 
 export const ThemeKeysKey = {
@@ -26,4 +27,5 @@ export const ThemeKeysKey = {
   white: "#FFFFFF",
   gray: "#CCCCCC",
   success: "#07bc0c",
+  error: "#cc0000",
 };

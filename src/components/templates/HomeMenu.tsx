@@ -19,13 +19,13 @@ export default function HomeMenu({ handleNavigation }: HomeMenuProps) {
         name="Produtos"
         footerName="Visualizar"
         icon="folder"
-        onClick={() => handleNavigation("productsList")}
+        onClick={() => handleNavigation("ProductsList")}
       />
       <ItemMenu
         name="Serviços"
         footerName="Visualizar"
         icon="server"
-        onClick={() => handleNavigation("produtcsList")}
+        onClick={() => handleNavigation("ServicesList")}
       />
       <ItemMenu
         name="Planejamento"

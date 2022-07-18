@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import userController from "../infra/controllers/user.controller";
 import clientController from "../infra/controllers/client.controller";
 import { login } from "../redux/userSlice";
+import providersController from "../infra/controllers/providers.controller";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -63,13 +64,14 @@ export default function Login() {
         );
         toast.success("Logado com sucesso. Bem vindo a área do cliente!");
       } else {
-        const getProvider = await clientController.authentication(
+        const getProvider = await providersController.authentication(
           email,
           password
         );
+
         dispatch(
           login({
-            valueClient: getProvider,
+            valueProvider: getProvider,
             type: "provider",
           })
         );

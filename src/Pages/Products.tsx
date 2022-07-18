@@ -5,29 +5,30 @@ import { Spinner } from "../components/atoms/Spinner";
 import { Wrapper } from "../components/atoms/Wrapper/Wrapper";
 import { SearchBar } from "../components/molecules/Searchbar/Searchbar";
 import Header from "../components/organisms/Header/Header";
-import ProviderList from "../components/organisms/ProviderList/ProviderList";
+import ProductList from "../components/organisms/ProductList/ProductList";
+import EProductType from "../helpers/ProductType.enum";
 import { ThemeKeysKey } from "../helpers/ThemeKeys";
-import planingController from "../infra/controllers/planning.controllers";
-import { ProviderSchema } from "../infra/Schemas/Provider.schema";
+import productsController from "../infra/controllers/product.controller";
+import { ProductSchema } from "../infra/Schemas/Product.schema";
 import { ReduxProps } from "../redux/userSlice";
 
 export default function Providers() {
   const [search, setSearch] = useState("");
-  const [providers, setProviders] = useState<ProviderSchema[]>([]);
+  const [products, setProducts] = useState<ProductSchema[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const selector = useSelector((state: ReduxProps) => state.user);
 
+  async function getProducts() {
+    const getProducts = await productsController.getByName(search);
+    const filterByProducts = getProducts.filter(
+      (x) => x.type === EProductType.Produto
+    );
+    setProducts(filterByProducts);
+  }
+
   async function loadData() {
     setIsLoading(true);
-    console.log(selector);
-    if (selector.type === "client") {
-      const getProviders = await planingController.getProvidersByClient(
-        selector.valueClient?.id || ""
-      );
-      console.log("getProviders", getProviders);
-      setProviders(getProviders || []);
-    }
-
+    getProducts();
     setTimeout(() => {
       setIsLoading(false);
     }, 500);
@@ -37,21 +38,26 @@ export default function Providers() {
     loadData();
   }, []);
 
+  useEffect(() => {
+    getProducts();
+  }, [search]);
+
   return (
     <div>
-      <Header name="Fornecedores" />
+      <Header name="Produtos" />
       <Wrapper>
         <div className="provider-page">
           <div className="home__searchBar">
             <SearchBar
-              placeholder="Digite o nome do fornecedor"
+              placeholder="Digite o nome do produto"
               value={search}
               onChange={(e) => setSearch(e)}
             />
           </div>
+          <div className="home__filterBar"></div>
           {!isLoading ? (
             <div>
-              <ProviderList providers={providers} />
+              <ProductList products={products} showProvider />
             </div>
           ) : (
             <div className="home__loading">

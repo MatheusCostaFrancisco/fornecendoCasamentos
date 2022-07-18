@@ -620,4 +620,37 @@ body {
   flex-direction: row;
   gap: 2px;
   align-items: center;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.product__avatar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.product__name {
+  font-size: 2em;
+}
+.product__like-button {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.product__about-text {
+  font-size: 1.2em;
+  text-justify: distribute;
+  font-stretch: expanded;
+}
+.product__gallery {
+  padding: 30px;
+}
+@media only screen and (max-width: 600px) {
+  .product__gallery {
+    padding: 0;
+  }
 }/*# sourceMappingURL=style.css.map */

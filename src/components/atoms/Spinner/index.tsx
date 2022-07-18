@@ -16,12 +16,14 @@ const override: CSSProperties = {
 export const Spinner = ({ color = "white", loading = false, size = 20 }) => {
   return (
     <div>
-      <HashLoader
-        color={color}
-        cssOverride={override}
-        loading={true}
-        size={size}
-      />
+      {loading && (
+        <HashLoader
+          color={color}
+          cssOverride={override}
+          loading={true}
+          size={size}
+        />
+      )}
     </div>
   );
 };

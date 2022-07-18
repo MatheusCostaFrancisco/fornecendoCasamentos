@@ -8,9 +8,13 @@ import EProductType from "../../../helpers/ProductType.enum";
 
 export type CardProductType = {
   product: ProductSchema;
+  showProvider?: boolean;
 };
 
-export default function CardProduct({ product }: CardProductType) {
+export default function CardProduct({
+  product,
+  showProvider = false,
+}: CardProductType) {
   return (
     <div className="card-product">
       <div className="card-product__image">
@@ -19,9 +23,14 @@ export default function CardProduct({ product }: CardProductType) {
       <div className="card-product__name">
         <strong>{product.name}</strong>
       </div>
-      <div className="card-product__tipe">
+      <div className="card-product__type">
         Tipo: <strong>{getTextByEnum(product.type, EProductType)}</strong>
       </div>
+      {showProvider && (
+        <div>
+          <strong>{product.providerName}</strong>
+        </div>
+      )}
     </div>
   );
 }

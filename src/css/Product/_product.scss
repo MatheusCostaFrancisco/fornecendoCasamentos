@@ -1,0 +1,36 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__avatar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__name {
+    font-size: 2em;
+  }
+
+  &__like-button {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  &__about-text {
+    font-size: 1.2em;
+    text-justify: distribute;
+    font-stretch: expanded;
+  }
+
+  &__gallery {
+    padding: 30px;
+
+    @media only screen and (max-width: 600px) {
+      padding: 0;
+    }
+  }
+}
