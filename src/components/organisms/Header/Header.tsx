@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Avatar } from "../../atoms/Avatar";
-import { Icon } from "../../atoms/Icon/Icon";
+
 import { useSelector } from "react-redux";
 import { selectorUser } from "../../../redux/userSlice";
 import { ProviderSchema } from "../../../infra/Schemas/Provider.schema";
 import { ClientSchema } from "../../../infra/Schemas/Client.schema";
+import NavbarMenu from "../../templates/NavBarMenu/NavBarMenu";
 
 export type HeaderProps = {
   name: string;
@@ -21,7 +22,7 @@ export default function Header({ name }: HeaderProps) {
   return (
     <header className="header">
       <div className="header__menu">
-        <Icon icon="align-justify" color="white" />
+        <NavbarMenu />
       </div>
       <div className="header__title">
         <p>{name}</p>

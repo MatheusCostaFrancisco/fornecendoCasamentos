@@ -3,7 +3,7 @@ import "./style.css";
 
 type InputTextProps = {
   label: string;
-  value: string | undefined;
+  value: string | undefined | number;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   testID?: string;
@@ -18,8 +18,9 @@ export const InputText = ({
   placeholder,
   errorLog,
   type,
+  testID,
 }: InputTextProps) => {
-  const [state, setState] = useState<string | undefined>(value || "");
+  const [state, setState] = useState<string | undefined | number>(value || "");
   const [errorClass, setErrorClass] = useState<string>("");
 
   useEffect(() => {
@@ -35,15 +36,16 @@ export const InputText = ({
   }, [errorLog]);
 
   return (
-    <div className={`input-text ${errorClass}`}>
+    <div className={`input-text${" " + errorClass}`}>
       <label className="input-text__label" htmlFor="inputText">
         {label}
       </label>
       <input
         type={type}
-        className={`input-text__input ${errorClass}`}
+        className={`input-text__input${" " + errorClass}`}
         onChange={(event) => onChange(event)}
         id="inputText"
+        data-testID={testID}
         placeholder={placeholder}
         value={state}
         maxLength={30}

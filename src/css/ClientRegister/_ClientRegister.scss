@@ -1,0 +1,29 @@
+.client-register {
+  &__wrapper {
+    width: 80vw;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    text-align: center;
+  }
+  &__personal-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__type {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 10px;
+
+    & > div {
+      flex: 0.4;
+    }
+  }
+}

@@ -70,6 +70,14 @@ body {
   color: #FFFFFF;
 }
 
+.bg-gray {
+  background-color: #CCCCCC;
+  color: #FFFFFF;
+}
+.bg-gray:hover {
+  box-shadow: 5px 4px 10px rgb(204, 204, 204);
+}
+
 .background {
   display: flex;
   justify-content: center;
@@ -146,6 +154,9 @@ body {
 }
 .header__menu {
   margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .header__user {
   display: flex;
@@ -653,4 +664,30 @@ body {
   .product__gallery {
     padding: 0;
   }
+}
+
+.client-register__wrapper {
+  width: 80vw;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.client-register__title {
+  text-align: center;
+}
+.client-register__personal-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.client-register__type {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 10px;
+}
+.client-register__type > div {
+  flex: 0.4;
 }/*# sourceMappingURL=style.css.map */

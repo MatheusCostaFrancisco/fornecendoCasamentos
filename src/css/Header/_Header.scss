@@ -10,6 +10,9 @@
 
     &__menu {
         margin-left: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     &__user {

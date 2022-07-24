@@ -39,6 +39,14 @@
   color: #FFFFFF;
 }
 
+.bg-gray {
+  background-color: #CCCCCC;
+  color: #FFFFFF;
+}
+.bg-gray:hover {
+  box-shadow: 5px 4px 10px rgb(204, 204, 204);
+}
+
 .evaluation {
   display: flex;
   flex-direction: row;

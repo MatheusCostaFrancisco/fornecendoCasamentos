@@ -57,3 +57,12 @@ $success: #07bc0c;
     background-color: $tertiary;
     color: $white;
 }
+
+.bg-gray {
+    background-color: $gray;
+    color: $white;
+
+    &:hover {
+        box-shadow: 5px 4px 10px rgb(204 204 204);
+    }
+}

@@ -7,24 +7,27 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import userController from "../infra/controllers/user.controller";
 import clientController from "../infra/controllers/client.controller";
-import { login } from "../redux/userSlice";
+import { login, logout } from "../redux/userSlice";
 import providersController from "../infra/controllers/providers.controller";
+import Modal from "../components/organisms/Modal/Modal";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorLog, setErrorLog] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(false);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(logout());
     return () => {
       setEmail("");
       setPassword("");
     };
-  }, []);
+  }, [dispatch]);
 
   const handleChangeEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (typeof event.target.value === "string") {
@@ -84,6 +87,10 @@ export default function Login() {
     setIsLoading(false);
   };
 
+  const OpenRegisterModal = () => {
+    setIsOpenModal(true);
+  };
+
   return (
     <div className="background">
       <div className="wrapper__Login">
@@ -97,6 +104,7 @@ export default function Login() {
           onChange={handleChangeEmail}
           label="Email"
           type="email"
+          testID="mail"
           errorLog={errorLog}
         />
         <InputText
@@ -104,6 +112,7 @@ export default function Login() {
           value={password}
           onChange={handleChangePass}
           label="Senha"
+          testID="pass"
           type="password"
           errorLog={errorLog}
         />
@@ -113,6 +122,36 @@ export default function Login() {
           onClick={handleLogin}
           rounded
           loading={isLoading}
+        />
+
+        <Button
+          label="Registrar"
+          onClick={OpenRegisterModal}
+          rounded
+          loading={isLoading}
+        />
+        <Modal
+          title="Registro"
+          message="Deseja mesmo se registrar?"
+          isOpen={isOpenModal}
+          onClose={() => {
+            setIsOpenModal(false);
+          }}
+          buttons={[
+            {
+              name: "Registrar",
+              action: () => {
+                navigate("/Register");
+              },
+            },
+            {
+              name: "Cancelar",
+              action: () => {
+                setIsOpenModal(false);
+              },
+              background: "gray",
+            },
+          ]}
         />
       </div>
     </div>
